@@ -2,6 +2,13 @@
 const makeWord = (word) => {
   const grid = [...document.querySelectorAll('[transform="translate(16, 20)"]')[0].children].slice(0,52)
   const letters = word.split('')
+  if (letters.length > 13) {
+    return "Input size too large."
+  } else {
+    while (letters.length <= 13) {
+      letters.push(" ")
+    }
+  }
   for (k = 0; k < letters.length; k++) {
     // conditional for having too long of a string to fit in boxes
     let startingX = (13 - (k * 4))
@@ -42,6 +49,13 @@ const makeLetter = (box, letter, startingX) => {
     case "f":
       makeF(box, letter, startingX)
       break
+    case "g":
+      makeG(box, letter, startingX)
+      break
+    case "h":
+      makeH(box, letter, startingX)
+      break
+  }
 }
 
 const makeA = (box, letter, startingX) => {
@@ -95,7 +109,7 @@ const makeC = (box, letter, startingX) => {
   const y = box.attributes[4].value
   if (y === "0" && (x === startingX.toString() || x === (startingX - 1).toString() || x === (startingX - 2).toString())) {
     box.setAttribute("fill", "#FF69B4")
-  } else if (y === "12" && (x === startingX.toString() || x === (startingX - 2).toString())) {
+  } else if (y === "12" && (x === startingX.toString())) {
     box.setAttribute("fill", "#FF69B4")
   } else if (y === "24" && x === startingX.toString()) {
     box.setAttribute("fill", "#FF69B4")
@@ -103,7 +117,7 @@ const makeC = (box, letter, startingX) => {
     box.setAttribute("fill", "#FF69B4")
   } else if (y === "48" && x === startingX.toString()) {
     box.setAttribute("fill", "#FF69B4")
-  } else if (y === "60" && (x === startingX.toString() || x === (startingX - 2).toString())) {
+  } else if (y === "60" && (x === startingX.toString())) {
     box.setAttribute("fill", "#FF69B4")
   } else if (y === "72" && (x === startingX.toString() || x === (startingX - 1).toString() || x === (startingX - 2).toString())) {
     box.setAttribute("fill", "#FF69B4")
@@ -182,6 +196,51 @@ const makeF = (box, letter, startingX) => {
   }
 }
 
+const makeG = (box, letter, startingX) => {
+  const x = box.attributes[3].value
+  const y = box.attributes[4].value
+  if (y === "0" && (x === startingX.toString() || x === (startingX - 1).toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "12" && (x === startingX.toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "24" && x === startingX.toString()) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "36" && (x === startingX.toString() || x === (startingX - 1).toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "48" && (x === startingX.toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "60" && (x === startingX.toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "72" && (x === startingX.toString() || x === (startingX - 1).toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  }
+  else {
+    box.setAttribute("fill", "#ebedf0")
+  }
+}
+
+const makeH = (box, letter, startingX) => {
+  const x = box.attributes[3].value
+  const y = box.attributes[4].value
+  if (y === "0" && (x === startingX.toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "12" && (x === startingX.toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "24" && (x === startingX.toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "36" && (x === startingX.toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "48" && (x === startingX.toString() || x === (startingX - 1).toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "60" && (x === startingX.toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "72" && (x === startingX.toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  }
+  else {
+    box.setAttribute("fill", "#ebedf0")
+  }
+}
 
 const makeSpace = (box, letter, startingX) => {
   box.setAttribute("fill", "#ebedf0")
