@@ -2,12 +2,14 @@ const grid = [...document.querySelectorAll('[transform="translate(16, 20)"]')[0]
 
 const getBoxes = (column, letter) => {
   let boxes = column.children
+  let startingX = boxes[0].attributes[3].value
+  console.log(startingX)
   for (j=0; j<boxes.length; j++) {
-    makeLetter(boxes[j], letter)
+    makeLetter(boxes[j], letter, startingX)
   }
 }
 
-const makeRow = (grid, letter) => {
+const makeWord = (grid, letter) => {
   for (i=0; i<grid.length; i++) {
     getBoxes(grid[i], letter)
   }
@@ -73,4 +75,4 @@ const makeB = (box, letter) => {
 
 let letter = "A"
 
-makeRow(grid, letter)
+makeWord(grid, letter)
