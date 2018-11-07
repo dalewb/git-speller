@@ -7,7 +7,7 @@ const makeWord = (word) => {
     let startingX = (13 - (k * 4))
     let xIndex = (k * 4)
     for (i = xIndex; i < (xIndex + 4); i++) {
-      getBoxes(grid, letters[i].toLowerCase(), startingX)
+      getBoxes(grid[i], letters[k].toLowerCase(), startingX)
     }
   }
 }
@@ -31,24 +31,27 @@ const makeLetter = (box, letter, startingX) => {
 }
 
 const makeA = (box, letter, startingX) => {
+  console.log("startingX ",startingX)
   const x = box.attributes[3].value
   const y = box.attributes[4].value
-  if (y === "0" && (x === startingX || x === (startingX - 1).toString() || x === (startingX - 2).toString())) {
+  if (y === "0" && (x === startingX.toString() || x === (startingX - 1).toString() || x === (startingX - 2).toString())) {
     box.setAttribute("fill", "#FF69B4")
-  } else if (y === "12" && (x === startingX || (startingX - 2).toString())) {
+  } else if (y === "12" && (x === startingX.toString() || x === (startingX - 2).toString())) {
     box.setAttribute("fill", "#FF69B4")
-  } else if (y === "24" && (x === startingX || (startingX - 2).toString())) {
+  } else if (y === "24" && (x === startingX.toString() || x === (startingX - 2).toString())) {
     box.setAttribute("fill", "#FF69B4")
-  } else if (y === "36" && (x === startingX || (startingX - 2).toString())) {
+  } else if (y === "36" && (x === startingX.toString() || x === (startingX - 2).toString())) {
     box.setAttribute("fill", "#FF69B4")
-  } else if (y === "48" && (x === startingX || x === (startingX - 1).toString() || x === (startingX - 2).toString())) {
+  } else if (y === "48" && (x === startingX.toString() || x === (startingX - 1).toString() || x === (startingX - 2).toString())) {
     box.setAttribute("fill", "#FF69B4")
-  } else if (y === "60" && (x === startingX || x === (startingX - 2).toString())) {
+  } else if (y === "60" && (x === startingX.toString() || x === (startingX - 2).toString())) {
     box.setAttribute("fill", "#FF69B4")
-  } else if (y === "72" && (x === startingX || x === (startingX - 2).toString())) {
+  } else if (y === "72" && (x === startingX.toString() || x === (startingX - 2).toString())) {
     box.setAttribute("fill", "#FF69B4")
   }
   else {
     box.setAttribute("fill", "#ebedf0")
   }
 }
+
+makeWord("a")
