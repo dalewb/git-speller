@@ -17,6 +17,10 @@ const makeLetter = (box, letter) => {
   switch (letter.toLowerCase()) {
     case "a":
       makeA(box, letter)
+      break
+    case "b":
+      makeB(box, letter)
+      break
   }
 }
 
@@ -42,6 +46,30 @@ const makeA = (box, letter) => {
     box.setAttribute("fill", "#ebedf0")
   }
 }
+
+const makeB = (box, letter) => {
+  const x = box.attributes[3].value
+  const y = box.attributes[4].value
+  if (y === "0" && (x === "13" || x === "12")) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "12" && (x === "13" || x === "11")) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "24" && (x === "13" || x === "11")) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "36" && (x === "13" || x === "12")) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "48" && (x === "13" || x === "11")) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "60" && (x === "13" || x === "11")) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "72" && (x === "13" || x === "12")) {
+    box.setAttribute("fill", "#FF69B4")
+  }
+  else {
+    box.setAttribute("fill", "#ebedf0")
+  }
+}
+
 
 let letter = "A"
 
