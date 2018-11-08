@@ -79,6 +79,9 @@ const makeLetter = (box, letter, startingX) => {
     case "o":
       makeO(box, letter, startingX)
       break
+    case "!":
+      makeEx(box, letter, startingX)
+      break
   }
 }
 
@@ -426,6 +429,29 @@ const makeO = (box, letter, startingX) => {
     box.setAttribute("fill", "#ebedf0")
   }
 }
+
+const makeEx = (box, letter, startingX) => {
+  const x = box.attributes[3].value
+  const y = box.attributes[4].value
+  if (y === "0" && (x === startingX.toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "12" && (x === startingX.toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "24" && (x === startingX.toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "36" && (x === startingX.toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "48" && (x === startingX.toString())) {
+    box.setAttribute("fill", "#FF69B4")
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "72" && (x === startingX.toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  }
+  else {
+    box.setAttribute("fill", "#ebedf0")
+  }
+}
+
 
 const makeSpace = (box, letter, startingX) => {
   box.setAttribute("fill", "#ebedf0")
