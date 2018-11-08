@@ -70,6 +70,15 @@ const makeLetter = (box, letter, startingX) => {
     case "l":
       makeL(box, letter, startingX)
       break
+    case "m":
+      makeM(box, letter, startingX)
+      break
+    case "n":
+      makeN(box, letter, startingX)
+      break
+    case "o":
+      makeO(box, letter, startingX)
+      break
   }
 }
 
@@ -349,8 +358,77 @@ const makeL = (box, letter, startingX) => {
   }
 }
 
+const makeM = (box, letter, startingX) => {
+  const x = box.attributes[3].value
+  const y = box.attributes[4].value
+  if (y === "0" && (x === startingX.toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "12" && (x === startingX.toString() || x === (startingX - 1).toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "24" && (x === startingX.toString() || x === (startingX - 1).toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "36" && (x === startingX.toString() || x === (startingX - 1).toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "48" && (x === startingX.toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "60" && (x === startingX.toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "72" && (x === startingX.toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  }
+  else {
+    box.setAttribute("fill", "#ebedf0")
+  }
+}
+
+const makeN = (box, letter, startingX) => {
+  const x = box.attributes[3].value
+  const y = box.attributes[4].value
+  if (y === "0" && (x === startingX.toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "12" && (x === startingX.toString() || x === (startingX - 1).toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "24" && (x === startingX.toString() || x === (startingX - 1).toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "36" && (x === startingX.toString() || x === (startingX - 1).toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "48" && (x === startingX.toString() || x === (startingX - 1).toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "60" && (x === startingX.toString() || x === (startingX - 1).toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "72" && (x === startingX.toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  }
+  else {
+    box.setAttribute("fill", "#ebedf0")
+  }
+}
+
+const makeO = (box, letter, startingX) => {
+  const x = box.attributes[3].value
+  const y = box.attributes[4].value
+  if (y === "0" && (x === startingX.toString() || x === (startingX - 1).toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "12" && (x === startingX.toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "24" && (x === startingX.toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "36" && (x === startingX.toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "48" && (x === startingX.toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "60" && (x === startingX.toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  } else if (y === "72" && (x === startingX.toString() || x === (startingX - 1).toString() || x === (startingX - 2).toString())) {
+    box.setAttribute("fill", "#FF69B4")
+  }
+  else {
+    box.setAttribute("fill", "#ebedf0")
+  }
+}
+
 const makeSpace = (box, letter, startingX) => {
   box.setAttribute("fill", "#ebedf0")
 }
 
-makeWord("jajaja")
+makeWord("ooo")
