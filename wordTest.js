@@ -3,7 +3,7 @@ const makeWord = (word) => {
   const grid = [...document.querySelectorAll('[transform="translate(16, 20)"]')[0].children].slice(0,52)
   const letters = word.split('')
   if (letters.length > 13) {
-    return "Input size too large."
+    return "Input size is too large."
   } else {
     while (letters.length <= 13) {
       letters.push(" ")
